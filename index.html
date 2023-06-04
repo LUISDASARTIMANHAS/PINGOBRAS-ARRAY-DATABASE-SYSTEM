@@ -3,15 +3,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="Refresh" content="120" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <link rel="stylesheet" href="/src/css/style.css" />
     <links></links>
+    <link rel="stylesheet" href="/src/css/sys.css" />
 
     <title> DATA SYSTEM </title>
   </head>
   <body>
- 
-   
-    <form>
+    
+    
+    <form onsubmit="gerarDados()">
     <label for="username">Nome de Usuário:</label>
     <input type="text" id="user" name="username" required>
     <br><br>
@@ -24,7 +24,7 @@
     <textarea id="bio" name="biography" rows="4" cols="50"></textarea>
     <br><br>
  
-    <button onclick="gerarDados()">
+    <button type="submit">
       Enviar Dados
     </button>
     </form>
