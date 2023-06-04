@@ -1,4 +1,12 @@
 let data = []
+const DB = localStorage.getItem("data")
+if(!DB){
+  console.log("-------DATA-SYSTEM------")
+  console.log("erro: Não implementado ou salvo!")
+}else{
+  data = DB
+}
+
 
 function postData(item){
 data.push(item)
@@ -26,14 +34,4 @@ function readData(){
   console.log("TAMANHO(KB): " + kBytes);
   console.log("TAMANHO(MB): " + mBytes);
   
-}
-
-function generateLinks(){
-const fonte = "https://mods.factorio.com/mod/"
-
-
-for(let i = 0; i < data.length; i++){
-  
-console.log(fonte + data[i])
-}
 }
