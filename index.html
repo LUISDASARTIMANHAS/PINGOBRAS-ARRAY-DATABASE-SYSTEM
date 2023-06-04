@@ -10,6 +10,39 @@
   </head>
   <body>
  
+   
+    <form>
+    <label for="username">Nome de Usuário:</label>
+    <input type="text" id="user" name="username" required>
+    <br><br>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="senha" name="password" required>
+    <br><br>
+
+    <label for="biography">Biografia:</label>
+    <textarea id="bio" name="biography" rows="4" cols="50"></textarea>
+    <br><br>
+ 
+    <button onclick="gerarDados()">
+      Enviar Dados
+    </button>
+    </form>
+    
+    <table>
+    <tr>
+      <th>TAMANHO</th>
+      <th>TAMANHO(Bytes)</th>
+      <th>TAMANHO(KB)</th>
+      <th>TAMANHO(MB)</th>
+    </tr>
+    <tr>
+      <td id="size">0</td>
+      <td id="sizeBytes">0Bytes</td>
+      <td id="sizeKB">0KB</td>
+      <td id="sizeMB">0MB</td>
+    </tr>
+  </table>
     
     
     <footer>
