@@ -4,13 +4,15 @@ const labelTam = document.getElementById("size");
 const labelBytes = document.getElementById("sizeBytes");
 const labelKB = document.getElementById("sizeKB");
 const labelMB = document.getElementById("sizeMB");
-
+let dataString = JSON.stringify(data)
 
 if(!DB){
   console.log("-------DATA-SYSTEM------")
   console.log("erro: Não implementado ou salvo!")
+  console.log("erro: " + DB)
 }else{
-  data = DB
+   data = JSON.parse(DB)
+  
 }
 
 function gerarDados(){
@@ -27,6 +29,9 @@ function gerarDados(){
 function postData(item){
 data.push(item)
 readData()
+  
+let dataString = JSON.stringify(data)
+localStorage.setItem("data",dataString);
 }
 
 function removeData(item){
