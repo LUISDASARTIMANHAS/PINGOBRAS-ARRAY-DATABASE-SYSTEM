@@ -1,10 +1,26 @@
 let data = []
-const DB = localStorage.getItem("data")
+const DB = localStorage.getItem("data");
+const labelTam = document.getElementById("size");
+const labelBytes = document.getElementById("sizeBytes");
+const labelKB = document.getElementById("sizeKB");
+const labelMB = document.getElementById("sizeMB");
+
+
 if(!DB){
   console.log("-------DATA-SYSTEM------")
   console.log("erro: Não implementado ou salvo!")
 }else{
   data = DB
+}
+
+function gerarDados(){
+  let userData  = {
+"usuario":"LUIS DAS ARTIMANHAS",
+"idade":18,
+"semha":"1234",
+"bio":"Gosto de longas caminhadas na praia. sigame para mais informações"
+}
+  postData(userData)
 }
 
 
@@ -34,4 +50,9 @@ function readData(){
   console.log("TAMANHO(KB): " + kBytes);
   console.log("TAMANHO(MB): " + mBytes);
   
+  labelTam.innerHTML = data.length
+  labelBytes.innerHTML = bytes
+  labelKB.innerHTML = kBytes
+  labelMB.innerHTML = mBytes
 }
+readData()
