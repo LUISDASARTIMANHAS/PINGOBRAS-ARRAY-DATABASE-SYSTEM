@@ -1,6 +1,7 @@
 let data = []
 const DB = localStorage.getItem("data");
 const labelTam = document.getElementById("size");
+const labelDat = document.getElementById("data");
 const labelBytes = document.getElementById("sizeBytes");
 const labelKB = document.getElementById("sizeKB");
 const labelMB = document.getElementById("sizeMB");
@@ -56,6 +57,7 @@ function readData(){
   console.log("TAMANHO(MB): " + mBytes);
   
   labelTam.innerHTML = data.length
+  labelDat.innerHTML = dataString
   labelBytes.innerHTML = bytes
   labelKB.innerHTML = kBytes
   labelMB.innerHTML = mBytes
