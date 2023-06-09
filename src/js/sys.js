@@ -37,15 +37,15 @@ let dataString = JSON.stringify(data)
 localStorage.setItem("data",dataString);
 }
 
-function removeData(item){
-item = data.indexOf(item);
-if (item > -1) {
-  data.splice(item, 1);
+function removeData(search){
+ let posicao = data.indexOf(data[search]);
+if (posicao > -1) {
+  data.splice(posicao, 0);
+  console.log("Item deletado: "+data[search])
 }else{
   console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
 }
 readData()
-return item
 }
 
 function readData(){
