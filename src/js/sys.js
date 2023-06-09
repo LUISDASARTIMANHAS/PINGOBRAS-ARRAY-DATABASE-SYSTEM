@@ -1,59 +1,51 @@
-let data = []
 const DB = localStorage.getItem("data");
+var DBLogs = localStorage.getItem("logs");
+let data = [];
+let dataLogs = ["Inicialização"];
+
 const labelTam = document.getElementById("size");
 const labelDat = document.getElementById("data");
+const labelLogs = document.getElementById("labelLogs");
 const labelBytes = document.getElementById("sizeBytes");
 const labelKB = document.getElementById("sizeKB");
 const labelMB = document.getElementById("sizeMB");
-const user = document.getElementById("user");
-const senha = document.getElementById("senha");
-const bio = document.getElementById("bio");
-let dataString = JSON.stringify(data)
 
-if(!DB){
-  console.log("-------DATA-SYSTEM------")
-  console.log("erro: Não implementado ou salvo!")
-  console.log("erro: " + DB)
-}else{
-   data = JSON.parse(DB)
-  
+if (!DB || !DBLogs) {
+  console.log("-------DATA-SYSTEM------");
+  console.log("Banco de dados Não implementado ou salvo!");
+  console.log("erro: " + DB);
+} else {
+  data = JSON.parse(DB);
+  dataLogs = JSON.parse(DBLogs);
+  console.log("Banco de dados carregado!");
 }
 
-function gerarDados(user,senha,bio){
-  let userData  = {
-"usuario":user,
-"semha":senha,
-"bio":bio
-}
-  postData(userData)
-}
+function readData() {
+  let dataString = JSON.stringify(data);
+  let bytes = dataString.length;
+  let kBytes = (bytes / 1000).toFixed(2);
+  let mBytes = (kBytes / 1000).toFixed(2);
+  logs("Leitura de dados...");
 
-
-function postData(item){
-data.push(item)
-readData()
-  
-let dataString = JSON.stringify(data)
-localStorage.setItem("data",dataString);
-}
-
-function readData(){
-  let dataString = JSON.stringify(data)
-  let bytes = dataString.length
-  let kBytes = (bytes/1000).toFixed(2)
-  let mBytes = (kBytes/1000).toFixed(2)
-  
   console.log("-------DATA-SYSTEM------");
   console.log("DATA: " + dataString);
   console.log("TAMANHO: " + data.length);
   console.log("TAMANHO(Bytes): " + bytes);
   console.log("TAMANHO(KB): " + kBytes);
   console.log("TAMANHO(MB): " + mBytes);
-  
-  labelTam.innerHTML = data.length
-  labelDat.innerHTML = dataString
-  labelBytes.innerHTML = bytes
-  labelKB.innerHTML = kBytes
-  labelMB.innerHTML = mBytes
+
+  labelTam.innerHTML = data.length;
+  labelDat.innerHTML = dataString;
+  labelBytes.innerHTML = bytes;
+  labelKB.innerHTML = kBytes;
+  labelMB.innerHTML = mBytes;
+  labelLogs.innerHTML = dataLogs;
 }
-readData()
+readData();
+
+function logs(log) {
+  dataLogs.push(log);
+
+  let dataLogsStr = JSON.stringify(dataLogs);
+  localStorage.setItem("logs", dataLogsStr);
+}

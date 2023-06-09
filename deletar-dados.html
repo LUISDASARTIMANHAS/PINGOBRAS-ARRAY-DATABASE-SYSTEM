@@ -12,15 +12,20 @@
     <div class="site-altura">
       <div class="conteudo" role="main">
     
-    <form onsubmit="removeData()">
+    <form action="/" onsubmit="removeData()">
       <label>Encontrar Dado:</label>
       <input value="0" 
              placeholder="Digite o Nuemro da coluna onde o dado esta armazenado" 
              type="number" 
              id="find" 
              required>
+      
+      <br>
+      <br>
+      
       <p>Dado Selecionado: <js id="dadoSelect">Nenhum</js> </p>
-    
+      <p>Posição No Armazenamento: <js id="dadoPos">-1</js> </p>
+      
       <br>
       <br>
  
@@ -41,6 +46,6 @@
   <script src="https://pingobras.glitch.me/js/links.js" defer></script>
   <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>
   <host>
-    <script src="https://pingobras.glitch.me/js/load-host.js" defer></script>
+<!--     <script src="https://pingobras.glitch.me/js/load-host.js" defer></script> -->
     </host>
 </html>

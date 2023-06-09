@@ -5,8 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <links></links>
     <link rel="stylesheet" href="./src/css/sys.css" />
+    <seo>
+    <meta
+      name="description"
+      content=" SISTEMA QUE GERENCIA UM BANCO DE DADOS COM UMA ARRAY."/>
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="PINGOBRAS ARRAY DATABASE SYSTEM" />
+    <meta property="og:type" content="System" />
+    <meta property="og:url" content="https://pingobras-array-database-system.glitch.me" />
+    <meta
+      property="og:image"
+      content=""/>
+      
+    <meta name="twitter:card" content="summary" />
+    </seo>
 
     <title> DATA SYSTEM </title>
+    
+    <nav class="cabecalho copyright">
+      <button
+              id="btndev" 
+              class="btnList btnNav "    
+              onclick="window.location.href='enviar-dados.html'">
+            Enviar Dados
+          </button>
+      
+      <button    
+              class="btnList btnNav " 
+              onclick="window.location.href='deletar-dados.html'">
+            Deletar Dados
+          </button>
+    </nav>
   </head>
   <body>
     <div class="site-altura">
@@ -14,23 +43,7 @@
       
     
     
-    <form onsubmit="gerarDados()">
-    <label for="username">Nome de Usuário:</label>
-    <input type="text" id="user" name="username" required>
-    <br><br>
-
-    <label for="password">Senha:</label>
-    <input type="password" id="senha" name="password" required>
-    <br><br>
-
-    <label for="biography">Biografia:</label>
-    <textarea id="bio" name="biography" rows="4" cols="50"></textarea>
-    <br><br>
- 
-    <button type="submit" id="submit">
-      Enviar Dados
-    </button>
-    </form>
+    
     
     <table>
     <tr>
@@ -51,6 +64,11 @@
           <tr><th>DATA</th></tr>
           <tr><td id="data">[no data]</td></tr>
         </table>
+        
+        <table>
+          <tr><th>Logs System</th></tr>
+          <tr><td id="labelLogs">[no Logs]</td></tr>
+        </table>
     
     
     <footer>
@@ -64,6 +82,6 @@
   <script src="https://pingobras.glitch.me/js/links.js" defer></script>
   <script src="https://pingobras.glitch.me/js/copyright.js" defer></script>
   <host>
-    <script src="https://pingobras.glitch.me/js/load-host.js" defer></script>
+<!--     <script src="https://pingobras.glitch.me/js/load-host.js" defer></script> -->
     </host>
 </html>

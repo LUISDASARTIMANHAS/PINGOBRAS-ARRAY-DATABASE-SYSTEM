@@ -1,32 +1,40 @@
 const DB = localStorage.getItem("data");
+const DBLogs = localStorage.getItem("logs");
 const inputDel = document.getElementById("find")
 const dadoSelect = document.getElementById("dadoSelect")
-let data = []
+const dadoPos = document.getElementById("dadoPos")
+let data = ["No Data"]
+let dataLogs = ["Inicialização"];
 inputDel.addEventListener("keyup", atualizar);
 
-if(!DB){
+if(!DB || DB == "[]" || !DBLogs){
   console.log("-------DATA-SYSTEM------")
-  console.log("erro: Não implementado ou salvo!")
+  console.log("Banco de dados Não implementado ou salvo!")
   console.log("erro: " + DB)
 }else{
    data = JSON.parse(DB)
+  console.log("Banco de dados carregado!")
   
 }
 
-function removeData(search){
-  let select = JSON.stringify(data[search])
-  let posicao = data.indexOf(data[search]);
-  if (posicao > -1) {
-    data.splice(posicao, 1);
-    console.log("Item deletado: "+select)
+function removeData(){
+  const posicao = inputDel.value
+  let select = JSON.stringify(data[posicao])
+  
+  if(data.length == 1){
+    logs("<err> Impossível deletar: Deve existir pelo menos 1 usuario no Banco de Dados")
+  }else if(posicao > -1){
+    let deletedDb = data.splice(posicao, 2);
+    console.log(deletedDb)
+    let dataString = JSON.stringify(deletedDb)
+    logs("Item deletado: "+select)
     alert("Item deletado: "+select)
     
-  }else{
-    console.error("<err> Impossível deletar: "+ select +" Não Encontrado no banco de dados")
-  }
-  let dataString = JSON.stringify(data)
   localStorage.setItem("data",dataString);
   readData()
+  }else{
+    logs("<err> Impossível deletar: "+ select +" Não Encontrado no banco de dados")
+  }
 }
 
 function readData(){
@@ -34,6 +42,7 @@ function readData(){
   let bytes = dataString.length
   let kBytes = (bytes/1000).toFixed(2)
   let mBytes = (kBytes/1000).toFixed(2)
+  
   
   console.log("-------DATA-SYSTEM------");
   console.log("DATA: " + dataString);
@@ -46,7 +55,18 @@ readData()
 
 function atualizar(){
   const inputDel = document.getElementById("find")
-  const search = inputDel.value
-  dadoSelect.innerHTML = JSON.stringify(data[search])
-  return search
+  const posicao = inputDel.value
+  dadoSelect.innerHTML = JSON.stringify(data[posicao])
+  if(posicao == -1){
+    dadoPos.innerHTML = "Sem Dados"
+  }else{
+    dadoPos.innerHTML = posicao;
+  }
+}
+
+function logs(log){
+  dataLogs.push(log);
+
+  let dataLogsStr = JSON.stringify(dataLogs);
+  localStorage.setItem("logs", dataLogsStr);
 }
