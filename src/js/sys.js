@@ -5,6 +5,9 @@ const labelDat = document.getElementById("data");
 const labelBytes = document.getElementById("sizeBytes");
 const labelKB = document.getElementById("sizeKB");
 const labelMB = document.getElementById("sizeMB");
+const user = document.getElementById("user");
+const senha = document.getElementById("senha");
+const bio = document.getElementById("bio");
 let dataString = JSON.stringify(data)
 
 if(!DB){
@@ -18,10 +21,9 @@ if(!DB){
 
 function gerarDados(){
   let userData  = {
-"usuario":"LUIS DAS ARTIMANHAS",
-"idade":18,
-"semha":"1234",
-"bio":"Gosto de longas caminhadas na praia. sigame para mais informações"
+"usuario":user,
+"semha":senha,
+"bio":bio
 }
   postData(userData)
 }
