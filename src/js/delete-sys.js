@@ -20,7 +20,9 @@ function removeData(search){
     
   }else{
     console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
-}
+  }
+  let dataString = JSON.stringify(data)
+  localStorage.setItem("data",dataString);
   readData()
 }
 
