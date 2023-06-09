@@ -40,7 +40,7 @@ localStorage.setItem("data",dataString);
 function removeData(item){
 item = data.indexOf(item);
 if (item > -1) {
-  data.splice(item, 0);
+  data.splice(item, 1);
 }else{
   console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
 }
