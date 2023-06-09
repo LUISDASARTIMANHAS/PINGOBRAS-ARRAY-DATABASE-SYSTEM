@@ -19,7 +19,7 @@ if(!DB){
   
 }
 
-function gerarDados(){
+function gerarDados(user,senha,bio){
   let userData  = {
 "usuario":user,
 "semha":senha,
@@ -40,7 +40,7 @@ localStorage.setItem("data",dataString);
 function removeData(item){
 item = data.indexOf(item);
 if (item > -1) {
-  data.splice(item, 1);
+  data.splice(item, 0);
 }
 readData()
 }
