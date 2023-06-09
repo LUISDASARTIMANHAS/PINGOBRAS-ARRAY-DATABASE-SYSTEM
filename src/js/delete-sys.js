@@ -11,15 +11,17 @@ if(!DB){
 }
 
 function removeData(search){
-let select = JSON.stringify(data[search])
-let posicao = data.indexOf(data[search]);
-if (posicao > -1) {
-  data.splice(posicao, 1);
-  console.log("Item deletado: "+select)
-}else{
-  console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
+  let select = JSON.stringify(data[search])
+  let posicao = data.indexOf(data[search]);
+  if (posicao > -1) {
+    data.splice(posicao, 1);
+    console.log("Item deletado: "+select)
+    alert("Item deletado: "+select)
+    
+  }else{
+    console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
 }
-readData()
+  readData()
 }
 
 function readData(){
