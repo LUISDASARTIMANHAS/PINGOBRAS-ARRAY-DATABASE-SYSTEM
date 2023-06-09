@@ -47,6 +47,6 @@ readData()
 function atualizar(){
   const inputDel = document.getElementById("inputDel")
   const search = inputDel.value
-  dadoSelect.innerHTML = "Dado selecionado: " + JSON.stringify(data[search])
+  dadoSelect.innerHTML = JSON.stringify(data[search])
   return search
 }
