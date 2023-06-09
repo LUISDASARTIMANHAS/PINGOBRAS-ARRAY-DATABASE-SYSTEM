@@ -1,5 +1,8 @@
-let data = []
 const DB = localStorage.getItem("data");
+const inputDel = document.getElementById("inputDel")
+const dadoSelect = document.getElementById("dadoSelect")
+let data = []
+inputDel.addEventListener("keyup", atualizar);
 
 if(!DB){
   console.log("-------DATA-SYSTEM------")
@@ -40,3 +43,10 @@ function readData(){
   console.log("TAMANHO(MB): " + mBytes);
 }
 readData()
+
+function atualizar(){
+  const inputDel = document.getElementById("inputDel")
+  const search = inputDel.value
+  dadoSelect.innerHTML = "Dado selecionado: " + JSON.stringify(data[search])
+  return search
+}
