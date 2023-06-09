@@ -37,18 +37,6 @@ let dataString = JSON.stringify(data)
 localStorage.setItem("data",dataString);
 }
 
-function removeData(search){
-let select = JSON.stringify(data[search])
-let posicao = data.indexOf(data[search]);
-if (posicao > -1) {
-  data.splice(posicao, 1);
-  console.log("Item deletado: "+select)
-}else{
-  console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
-}
-readData()
-}
-
 function readData(){
   let dataString = JSON.stringify(data)
   let bytes = dataString.length
