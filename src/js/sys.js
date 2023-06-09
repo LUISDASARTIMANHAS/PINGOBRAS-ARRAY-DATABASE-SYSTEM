@@ -43,6 +43,7 @@ if (item > -1) {
   data.splice(item, 0);
 }
 readData()
+return item
 }
 
 function readData(){
