@@ -41,6 +41,8 @@ function removeData(item){
 item = data.indexOf(item);
 if (item > -1) {
   data.splice(item, 0);
+}else{
+  console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
 }
 readData()
 return item
