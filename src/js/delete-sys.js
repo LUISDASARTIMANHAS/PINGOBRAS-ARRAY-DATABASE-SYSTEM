@@ -1,5 +1,5 @@
 const DB = localStorage.getItem("data");
-const inputDel = document.getElementById("inputDel")
+const inputDel = document.getElementById("find")
 const dadoSelect = document.getElementById("dadoSelect")
 let data = []
 inputDel.addEventListener("keyup", atualizar);
@@ -45,7 +45,7 @@ function readData(){
 readData()
 
 function atualizar(){
-  const inputDel = document.getElementById("inputDel")
+  const inputDel = document.getElementById("find")
   const search = inputDel.value
   dadoSelect.innerHTML = JSON.stringify(data[search])
   return search
