@@ -19,7 +19,7 @@ function removeData(search){
     alert("Item deletado: "+select)
     
   }else{
-    console.log("<err> Impossível deletar: Item Não Encontrado no banco de dados")
+    console.log("<err> Impossível deletar: "+ select +" Não Encontrado no banco de dados")
   }
   let dataString = JSON.stringify(data)
   localStorage.setItem("data",dataString);
