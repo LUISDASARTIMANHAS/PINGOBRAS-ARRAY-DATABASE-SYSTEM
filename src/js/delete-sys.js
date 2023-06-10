@@ -8,12 +8,12 @@ let dataLogs = ["Inicialização"];
 inputDel.addEventListener("keyup", atualizar);
 
 if(!DB || DB == "[]" || !DBLogs){
-  console.log("-------DATA-SYSTEM------")
-  console.log("Banco de dados Não implementado ou salvo!")
-  console.log("erro: " + DB)
+  logs("-------DATA-SYSTEM------")
+  logs("Banco de dados Não implementado ou salvo!")
+  logs("erro: " + DB)
 }else{
    data = JSON.parse(DB)
-  console.log("Banco de dados carregado!")
+  logs("Banco de dados carregado!")
   
 }
 
