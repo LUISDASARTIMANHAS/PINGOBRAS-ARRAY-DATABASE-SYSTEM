@@ -11,13 +11,13 @@ const labelKB = document.getElementById("sizeKB");
 const labelMB = document.getElementById("sizeMB");
 
 if (!DB || !DBLogs) {
-  console.log("-------DATA-SYSTEM------");
-  console.log("Banco de dados Não implementado ou salvo!");
-  console.log("erro: " + DB);
+  logs("-------DATA-SYSTEM------");
+  logs("Banco de dados Não implementado ou salvo!");
+  logs("erro: " + DB);
 } else {
   data = JSON.parse(DB);
   dataLogs = JSON.parse(DBLogs);
-  console.log("Banco de dados carregado!");
+  logs("Banco de dados carregado!");
 }
 
 function readData() {
