@@ -10,6 +10,7 @@ if(!DB || DB == "[]" || !DBLogs){
   logs("-------DATA-SYSTEM------")
   logs("Banco de dados Não implementado ou salvo!")
   logs("erro: " + DB)
+  DB == []
 }else{
    data = JSON.parse(DB)
   logs("Banco de dados carregado!")
